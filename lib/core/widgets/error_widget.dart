@@ -3,8 +3,8 @@ import 'package:test_app/core/utils/app_colors.dart';
 import 'package:test_app/core/utils/media_query_values.dart';
 
 class ErrorWidget extends StatelessWidget {
-  const ErrorWidget({super.key});
-
+  const ErrorWidget({super.key, required this.onPressed});
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -46,7 +46,7 @@ class ErrorWidget extends StatelessWidget {
             height: 50.0,
             width: context.width * 0.55,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: onPressed,
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
                   elevation: 500.0,
